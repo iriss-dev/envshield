@@ -1,0 +1,59 @@
+{
+  "name": "envshield",
+  "version": "0.1.0",
+  "description": "Zero-dependency pre-commit hook and CI secret leak prevention. Intercepts leaked .env files, Discord tokens, OpenAI keys, and AWS credentials in <15ms.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "envshield": "./bin/envshield.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "bin",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "node --test",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "git",
+    "security",
+    "pre-commit",
+    "secrets",
+    "env",
+    "leak-prevention",
+    "credentials",
+    "tokens",
+    "ci"
+  ],
+  "author": "Iris <iriss.smith08@proton.me> (https://github.com/iriss-dev)",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iriss-dev/envshield.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iriss-dev/envshield/issues"
+  },
+  "homepage": "https://github.com/iriss-dev/envshield#readme",
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}
